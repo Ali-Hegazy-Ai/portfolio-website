@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { useScrollReveal, scrollRevealVariants } from '../hooks/useScrollReveal'
 import { FloatingRing, GeometricShape, MovingLines, AnimatedGrid, FloatingOrbs } from '../components/AbstractShapes'
 
 const About = () => {
