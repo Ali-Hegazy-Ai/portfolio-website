@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    @apply selection:bg-accent/20 selection:text-accent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
+  
+  * {
+    @apply border-border/20;
+  }
+  
+  /* Enhanced smooth scrolling for all elements */
+  *, *::before, *::after {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+  
+  /* Performance optimizations */
+  * {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Mobile viewport fix */
+  @supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+      min-height: -webkit-fill-available;
+    }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-hover text-background font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-glow active:scale-95 touch-manipulation;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-border hover:border-accent text-foreground font-medium px-6 py-3 rounded-xl transition-all duration-200 hover:bg-accent/5 active:scale-95 touch-manipulation;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-foreground/5 text-foreground font-medium px-4 py-2 rounded-xl transition-all duration-200 active:scale-95 touch-manipulation;
+  }
+  
+  .btn-floating {
+    @apply bg-accent hover:bg-accent-hover text-background rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 active:scale-95 touch-manipulation;
+  }
+  
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+  
+  .card {
+    @apply bg-background-secondary border border-border/50 rounded-2xl p-6 transition-all duration-200 hover:shadow-lg hover:border-border;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 touch-manipulation;
+  }
+  
+  .textarea-field {
+    @apply w-full px-4 py-3 bg-background border border-border rounded-xl text-foreground placeholder:text-muted transition-all duration-200 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 resize-none min-h-[120px] touch-manipulation;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+  
+  .error-text {
+    @apply text-red-500 text-sm mt-1;
+  }
+  
+  .success-text {
+    @apply text-green-500 text-sm mt-1;
+  }
+  
+  .brutalist-border {
+    @apply border-2 border-accent shadow-brutal;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-accent-hover bg-clip-text text-transparent;
+  }
+  
+  /* Modern Abstract Components */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .floating-element {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .floating-element:hover {
+    box-shadow: 0 25px 50px -12px rgba(127, 90, 240, 0.25);
+    transform: translateY(-8px);
+  }
+  
+  .abstract-bg {
+    background: linear-gradient(135deg, rgba(127, 90, 240, 0.05) 0%, rgba(34, 197, 94, 0.05) 100%);
+  }
+  
+  .mesh-gradient {
+    background: radial-gradient(circle at 20% 80%, rgba(127, 90, 240, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(22, 163, 74, 0.1) 0%, transparent 50%);
+  }
+  
+  .glow-on-hover {
+    transition: all 0.3s ease;
+  }
+  
+  .glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(127, 90, 240, 0.25);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
