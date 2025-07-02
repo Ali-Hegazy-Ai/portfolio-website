@@ -2,7 +2,7 @@
 
 > **A sleek, professional portfolio showcasing cutting-edge web development skills**
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://portfolio-website-ali-hegazy.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=netlify)](https://ali-hegazy.netlify.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Ali-Hegazy-Ai/portfolio-website)
 [![React](https://img.shields.io/badge/React-18.3.1-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6.2-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -206,7 +206,7 @@ npm run build
 
 **Ali Hegazy** - Full Stack Developer & UI/UX Designer
 
-- 🌐 **Portfolio**: [Live Demo](https://portfolio-website-ali-hegazy.netlify.app)
+- 🌐 **Portfolio**: [Live Demo](https://ali-hegazy.netlify.app)
 - 💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/ali-hegazy)
 - 📧 **Email**: [Get in touch](mailto:ali.hegazy.dev@gmail.com)
 - 🐙 **GitHub**: [@Ali-Hegazy-Ai](https://github.com/Ali-Hegazy-Ai)
