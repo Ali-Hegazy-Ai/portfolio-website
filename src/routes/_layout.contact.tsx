@@ -94,8 +94,8 @@ const Contact = () => {
     {
       icon: HiPhone,
       label: 'Phone',
-      value: '+20 122 419 7326',
-      href: 'tel:+201224197326'
+      value: '',
+      href: 'tel'
     },
     {
       icon: HiLocationMarker,
