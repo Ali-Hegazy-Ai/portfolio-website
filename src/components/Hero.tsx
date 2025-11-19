@@ -4,7 +4,7 @@ import { FloatingBlob1, FloatingBlob2, FloatingRing, GeometricShape } from './Ab
 
 const Hero = () => {
   const navigate = useNavigate()
-  
+
   // Animation variants for staggered entrance
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -18,9 +18,9 @@ const Hero = () => {
   }
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 30 
+    hidden: {
+      opacity: 0,
+      y: 30
     },
     visible: {
       opacity: 1,
@@ -31,19 +31,11 @@ const Hero = () => {
   // Navigate to projects page
   const scrollToProjects = () => {
     navigate('/projects')
-    // Scroll to top after navigation
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 0)
   }
 
   // Navigate to contact page
   const scrollToContact = () => {
     navigate('/contact')
-    // Scroll to top after navigation
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 0)
   }
 
   return (
@@ -53,10 +45,10 @@ const Hero = () => {
       <FloatingBlob2 className="bottom-32 -right-16 opacity-25" />
       <FloatingRing className="top-1/4 right-1/4 opacity-40" />
       <GeometricShape className="bottom-1/4 left-1/3 opacity-20" />
-      
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40 pointer-events-none" />
-      
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="h-full w-full" style={{
@@ -68,14 +60,14 @@ const Hero = () => {
         }} />
       </div>
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="relative z-10 max-w-[1200px] mx-auto px-6 text-center"
       >
         {/* Main Title with Enhanced Typography */}
-        <motion.h1 
+        <motion.h1
           variants={itemVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-[64px] md:text-[120px] font-black text-white leading-[0.8] tracking-tight mb-4 relative"
@@ -84,11 +76,11 @@ const Hero = () => {
             Ali Hegazy
             <motion.div
               className="absolute -inset-2 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl"
-              animate={{ 
+              animate={{
                 scale: [1, 1.05, 1],
                 opacity: [0.3, 0.1, 0.3]
               }}
-              transition={{ 
+              transition={{
                 duration: 4,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -98,7 +90,7 @@ const Hero = () => {
         </motion.h1>
 
         {/* Enhanced Subtitle with Gradient */}
-        <motion.h2 
+        <motion.h2
           variants={itemVariants}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="text-[24px] md:text-[40px] font-bold mb-6 bg-gradient-to-r from-accent via-green-400 to-accent bg-clip-text text-transparent"
@@ -107,7 +99,7 @@ const Hero = () => {
         </motion.h2>
 
         {/* Tagline */}
-        <motion.p 
+        <motion.p
           variants={itemVariants}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="text-[18px] md:text-[24px] text-muted max-w-[600px] mx-auto mb-10 leading-relaxed"
@@ -116,13 +108,13 @@ const Hero = () => {
         </motion.p>
 
         {/* Enhanced CTA Buttons with Glassmorphism */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto"
         >
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               y: -5,
               boxShadow: "0 20px 40px rgba(127, 90, 240, 0.3)",
@@ -142,7 +134,7 @@ const Hero = () => {
           </motion.button>
 
           <motion.button
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               y: -5,
               backgroundColor: "rgba(127, 90, 240, 0.1)",

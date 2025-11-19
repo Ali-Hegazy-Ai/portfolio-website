@@ -29,11 +29,8 @@
     box-sizing: border-box;
   }
   
-  /* Performance optimizations */
-  * {
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-  }
+  /* Performance optimizations - removed global transforms */
+  /* Apply transform-style only to specific animated elements if needed */
   
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {

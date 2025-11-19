@@ -3,11 +3,11 @@ import { useOptimizedNavigation } from '../hooks/usePerformance'
 const Footer = () => {
   const { handleNavigation } = useOptimizedNavigation()
   const currentYear = new Date().getFullYear()
-  
+
   const socialLinks = [
-    { name: 'GitHub', href: 'https://github.com', external: true },
-    { name: 'LinkedIn', href: 'https://linkedin.com', external: true },
-    { name: 'Twitter', href: 'https://twitter.com', external: true },
+    { name: 'GitHub', href: 'https://github.com/Ali-Hegazy-Ai', external: true },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/alihogz/', external: true },
+    { name: 'X', href: 'https://x.com/ali_hegazyy', external: true },
     { name: 'Email', href: 'mailto:ali_hegazy_@outlook.com', external: true },
   ]
 
@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           {/* Brand Section */}
           <div className="text-center md:text-left">
-            <button 
+            <button
               onClick={() => handleNavigation('/')}
               className="text-xl font-bold text-gradient mb-2 inline-block bg-transparent border-none cursor-pointer"
             >

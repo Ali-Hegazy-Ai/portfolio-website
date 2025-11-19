@@ -7,16 +7,20 @@ const BackToTop = () => {
   const { scrollToTop } = useSmoothScroll()
 
   useEffect(() => {
+    let timeoutId: number | undefined
+
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true)
-      } else {
-        setIsVisible(false)
-      }
+      if (timeoutId) clearTimeout(timeoutId)
+      timeoutId = window.setTimeout(() => {
+        setIsVisible(window.pageYOffset > 300)
+      }, 100)
     }
 
-    window.addEventListener('scroll', toggleVisibility)
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+      if (timeoutId) clearTimeout(timeoutId)
+    }
   }, [])
 
   return (
@@ -26,7 +30,7 @@ const BackToTop = () => {
           initial={{ opacity: 0, scale: 0.8, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
-          whileHover={{ 
+          whileHover={{
             scale: 1.1,
             backgroundColor: "#9370ff",
             transition: { duration: 0.2 }
@@ -46,7 +50,7 @@ const BackToTop = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="m18 15-6-6-6 6"/>
+            <path d="m18 15-6-6-6 6" />
           </svg>
         </motion.button>
       )}

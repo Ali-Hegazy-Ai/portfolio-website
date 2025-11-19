@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { 
-  HiMail, 
-  HiPhone, 
-  HiLocationMarker, 
+import {
+  HiMail,
+  HiPhone,
+  HiLocationMarker,
   HiDesktopComputer,
   HiCheckCircle,
   HiArrowRight
@@ -26,10 +26,10 @@ const Contact = () => {
     const newErrors: Record<string, string> = {}
     if (!formData.name.trim()) newErrors.name = 'Name is required'
     if (!formData.email.trim()) newErrors.email = 'Email is required'
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid'
+    else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(formData.email)) newErrors.email = 'Please enter a valid email address'
     if (!formData.subject.trim()) newErrors.subject = 'Subject is required'
     if (!formData.message.trim()) newErrors.message = 'Message is required'
-    
+
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -68,8 +68,8 @@ const Contact = () => {
 
   const formVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { delay: 0.3 }
     }
@@ -77,8 +77,8 @@ const Contact = () => {
 
   const infoVariants = {
     hidden: { opacity: 0, x: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       x: 0,
       transition: { delay: 0.4 }
     }
@@ -91,12 +91,7 @@ const Contact = () => {
       value: 'ali_hegazy_@outlook.com',
       href: 'mailto:ali_hegazy_@outlook.com'
     },
-    {
-      icon: HiPhone,
-      label: 'Phone',
-      value: '',
-      href: 'tel'
-    },
+
     {
       icon: HiLocationMarker,
       label: 'Location',
@@ -124,16 +119,16 @@ const Contact = () => {
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               Available for new projects
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               variants={itemVariants}
               className="text-5xl md:text-7xl font-bold mb-6 text-balance"
             >
               Let's work{' '}
               <span className="text-gradient">together</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               variants={itemVariants}
               className="text-xl text-muted mb-8 max-w-2xl text-balance"
             >
@@ -151,7 +146,7 @@ const Contact = () => {
             <motion.div variants={formVariants} className="order-2 lg:order-1">
               <div className="card">
                 <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
-                
+
                 {isSubmitted && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
@@ -341,7 +336,7 @@ const Contact = () => {
                   <span className="text-green-500 font-medium">Available</span>
                 </div>
                 <p className="text-muted">
-                  Currently accepting new projects starting in Q2 2024. Book a consultation to discuss your timeline.
+                  Currently accepting new projects. Book a consultation to discuss your timeline and requirements.
                 </p>
               </div>
             </motion.div>

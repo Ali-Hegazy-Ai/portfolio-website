@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation()
   const navigate = useNavigate()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  
+
   const navigation = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
@@ -21,13 +21,9 @@ const Navbar = () => {
     return location.pathname.startsWith(href)
   }
 
-  // Handle navigation with scroll to top
+  // Handle navigation
   const handleNavigation = (href: string) => {
     navigate(href)
-    // Scroll to top after navigation
-    setTimeout(() => {
-      window.scrollTo(0, 0)
-    }, 0)
   }
 
   // Close mobile menu when route changes
@@ -60,7 +56,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 h-full">
         <div className="flex items-center justify-between h-full">
           {/* Logo/Brand */}
-          <button 
+          <button
             onClick={() => handleNavigation('/')}
             className="text-xl font-bold text-gradient hover:opacity-80 transition-opacity duration-200 z-50 bg-transparent border-none cursor-pointer"
           >
@@ -73,16 +69,15 @@ const Navbar = () => {
               <button
                 key={item.name}
                 onClick={() => handleNavigation(item.href)}
-                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer ${
-                  isActive(item.href)
+                className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer ${isActive(item.href)
                     ? 'text-accent'
                     : 'text-foreground hover:text-accent'
-                }`}
+                  }`}
               >
                 {item.name}
                 {/* Active indicator with animation */}
                 {isActive(item.href) && (
-                  <motion.div 
+                  <motion.div
                     layoutId="activeIndicator"
                     className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
@@ -94,7 +89,7 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-            <button 
+            <button
               onClick={() => handleNavigation('/contact')}
               className="btn-primary text-sm"
             >
@@ -103,7 +98,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             onClick={toggleMobileMenu}
             className="md:hidden relative z-50 p-2 text-foreground hover:text-accent transition-colors duration-200"
             aria-label="Toggle mobile menu"
@@ -145,17 +140,16 @@ const Navbar = () => {
                   >
                     <button
                       onClick={() => handleNavigation(item.href)}
-                      className={`w-full text-left block py-3 px-4 text-lg font-medium transition-colors duration-200 rounded-lg bg-transparent border-none cursor-pointer ${
-                        isActive(item.href)
+                      className={`w-full text-left block py-3 px-4 text-lg font-medium transition-colors duration-200 rounded-lg bg-transparent border-none cursor-pointer ${isActive(item.href)
                           ? 'text-accent bg-accent/10'
                           : 'text-foreground hover:text-accent hover:bg-accent/5'
-                      }`}
+                        }`}
                     >
                       {item.name}
                     </button>
                   </motion.div>
                 ))}
-                
+
                 {/* Mobile CTA Button */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -163,7 +157,7 @@ const Navbar = () => {
                   transition={{ delay: 0.4 }}
                   className="pt-4"
                 >
-                  <button 
+                  <button
                     onClick={() => handleNavigation('/contact')}
                     className="block w-full text-center btn-primary py-3"
                   >

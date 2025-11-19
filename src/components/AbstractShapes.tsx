@@ -30,7 +30,7 @@ export const MovingLines = ({ className = "" }: { className?: string }) => (
 // Animated Grid Pattern (Optimized)
 export const AnimatedGrid = ({ className = "" }: { className?: string }) => (
   <div className={`absolute inset-0 opacity-[0.02] pointer-events-none ${className}`}>
-    <motion.div 
+    <motion.div
       className="h-full w-full"
       animate={{
         backgroundPosition: ['0px 0px', '50px 50px', '0px 0px'],
@@ -82,18 +82,18 @@ export const FloatingOrbs = ({ className = "" }: { className?: string }) => (
 export const FloatingBlob1 = ({ className = "" }: { className?: string }) => (
   <motion.div
     className={`absolute pointer-events-none ${className}`}
-    animate={{ 
+    animate={{
       rotate: 360,
       scale: [1, 1.1, 1],
     }}
-    transition={{ 
+    transition={{
       rotate: { duration: 20, repeat: Infinity, ease: "linear" },
       scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
     }}
   >
     <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
-      <path 
-        d="M47.5,-78.4C61.8,-71.2,74.1,-58.1,83.7,-42.8C93.3,-27.5,100.2,-10,97.9,6.5C95.6,23,84.1,38.5,70.3,50.7C56.5,62.9,40.4,71.8,23.4,78.1C6.4,84.4,-11.5,88.1,-29.2,84.7C-46.9,81.3,-64.4,70.8,-75.8,55.4C-87.2,40,-92.5,19.7,-91.3,-0.9C-90.1,-21.5,-82.4,-42.4,-70.9,-59.2C-59.4,-76,-44.1,-88.7,-27.7,-94.2C-11.3,-99.7,6.2,-97.9,22.4,-89.9C38.6,-81.9,53.5,-67.7,47.5,-78.4Z" 
+      <path
+        d="M47.5,-78.4C61.8,-71.2,74.1,-58.1,83.7,-42.8C93.3,-27.5,100.2,-10,97.9,6.5C95.6,23,84.1,38.5,70.3,50.7C56.5,62.9,40.4,71.8,23.4,78.1C6.4,84.4,-11.5,88.1,-29.2,84.7C-46.9,81.3,-64.4,70.8,-75.8,55.4C-87.2,40,-92.5,19.7,-91.3,-0.9C-90.1,-21.5,-82.4,-42.4,-70.9,-59.2C-59.4,-76,-44.1,-88.7,-27.7,-94.2C-11.3,-99.7,6.2,-97.9,22.4,-89.9C38.6,-81.9,53.5,-67.7,47.5,-78.4Z"
         fill="url(#blob1Gradient)"
         opacity="0.6"
       />
@@ -110,18 +110,18 @@ export const FloatingBlob1 = ({ className = "" }: { className?: string }) => (
 export const FloatingBlob2 = ({ className = "" }: { className?: string }) => (
   <motion.div
     className={`absolute pointer-events-none ${className}`}
-    animate={{ 
+    animate={{
       rotate: -360,
       scale: [1, 0.9, 1],
     }}
-    transition={{ 
+    transition={{
       rotate: { duration: 25, repeat: Infinity, ease: "linear" },
       scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
     }}
   >
     <svg width="150" height="150" viewBox="0 0 200 200" fill="none">
-      <path 
-        d="M54.1,-91.4C69.2,-83.7,79.8,-67.4,86.9,-49.8C94,-32.2,97.6,-13.3,95.6,4.8C93.6,22.9,86,40.2,74.8,54.4C63.6,68.6,48.8,79.7,32.2,84.9C15.6,90.1,-2.8,89.4,-20.5,84.2C-38.2,79,-55.2,69.3,-67.8,55.4C-80.4,41.5,-88.6,23.4,-91.1,4.1C-93.6,-15.2,-90.4,-35.7,-81.7,-52.8C-73,-69.9,-58.8,-83.6,-42.9,-90.8C-27,-98,-9.4,-98.7,6.8,-109.2C23,-119.7,46,-140,54.1,-91.4Z" 
+      <path
+        d="M54.1,-91.4C69.2,-83.7,79.8,-67.4,86.9,-49.8C94,-32.2,97.6,-13.3,95.6,4.8C93.6,22.9,86,40.2,74.8,54.4C63.6,68.6,48.8,79.7,32.2,84.9C15.6,90.1,-2.8,89.4,-20.5,84.2C-38.2,79,-55.2,69.3,-67.8,55.4C-80.4,41.5,-88.6,23.4,-91.1,4.1C-93.6,-15.2,-90.4,-35.7,-81.7,-52.8C-73,-69.9,-58.8,-83.6,-42.9,-90.8C-27,-98,-9.4,-98.7,6.8,-109.2C23,-119.7,46,-140,54.1,-91.4Z"
         fill="url(#blob2Gradient)"
         opacity="0.4"
       />
@@ -138,31 +138,31 @@ export const FloatingBlob2 = ({ className = "" }: { className?: string }) => (
 export const FloatingRing = ({ className = "" }: { className?: string }) => (
   <motion.div
     className={`absolute pointer-events-none ${className}`}
-    animate={{ 
+    animate={{
       rotate: 360,
       y: [0, -20, 0],
     }}
-    transition={{ 
+    transition={{
       rotate: { duration: 15, repeat: Infinity, ease: "linear" },
       y: { duration: 3, repeat: Infinity, ease: "easeInOut" }
     }}
   >
     <svg width="100" height="100" viewBox="0 0 100 100" fill="none">
-      <circle 
-        cx="50" 
-        cy="50" 
-        r="35" 
-        stroke="url(#ringGradient)" 
-        strokeWidth="3" 
+      <circle
+        cx="50"
+        cy="50"
+        r="35"
+        stroke="url(#ringGradient)"
+        strokeWidth="3"
         fill="none"
         opacity="0.7"
       />
-      <circle 
-        cx="50" 
-        cy="50" 
-        r="20" 
-        stroke="url(#ringGradient2)" 
-        strokeWidth="2" 
+      <circle
+        cx="50"
+        cy="50"
+        r="20"
+        stroke="url(#ringGradient2)"
+        strokeWidth="2"
         fill="none"
         opacity="0.5"
       />
@@ -183,19 +183,19 @@ export const FloatingRing = ({ className = "" }: { className?: string }) => (
 export const GeometricShape = ({ className = "" }: { className?: string }) => (
   <motion.div
     className={`absolute pointer-events-none ${className}`}
-    animate={{ 
+    animate={{
       rotate: [0, 45, 0],
       scale: [1, 1.2, 1],
     }}
-    transition={{ 
+    transition={{
       duration: 8,
       repeat: Infinity,
       ease: "easeInOut"
     }}
   >
     <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-      <polygon 
-        points="40,5 70,25 70,55 40,75 10,55 10,25" 
+      <polygon
+        points="40,5 70,25 70,55 40,75 10,55 10,25"
         fill="url(#geometricGradient)"
         opacity="0.3"
         stroke="url(#geometricStroke)"
@@ -217,12 +217,12 @@ export const GeometricShape = ({ className = "" }: { className?: string }) => (
 
 export const WavePattern = ({ className = "" }: { className?: string }) => (
   <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-    <svg 
-      className="absolute bottom-0 left-0 w-full h-32" 
-      viewBox="0 0 1440 320" 
+    <svg
+      className="absolute bottom-0 left-0 w-full h-32"
+      viewBox="0 0 1440 320"
       preserveAspectRatio="none"
     >
-      <motion.path 
+      <motion.path
         d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         fill="url(#waveGradient)"
         opacity="0.1"
@@ -252,7 +252,7 @@ export const WavePattern = ({ className = "" }: { className?: string }) => (
 
 export const StarField = ({ className = "" }: { className?: string }) => (
   <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-    {Array.from({ length: 50 }).map((_, i) => (
+    {Array.from({ length: 15 }).map((_, i) => (
       <motion.div
         key={i}
         className="absolute w-1 h-1 bg-accent rounded-full"
@@ -335,7 +335,7 @@ export const ConnectedNodes = ({ className = "" }: { className?: string }) => (
 
 export const ParticleField = ({ className = "" }: { className?: string }) => (
   <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-    {Array.from({ length: 30 }).map((_, i) => (
+    {Array.from({ length: 10 }).map((_, i) => (
       <motion.div
         key={i}
         className="absolute w-2 h-2 bg-gradient-to-r from-accent to-green-400 rounded-full blur-[1px]"
@@ -440,7 +440,7 @@ export const AbstractGeometry = ({ className = "" }: { className?: string }) => 
           ease: "linear"
         }}
       />
-      
+
       {/* Hexagon shapes */}
       <motion.polygon
         points="500,100 540,120 540,160 500,180 460,160 460,120"
@@ -456,7 +456,7 @@ export const AbstractGeometry = ({ className = "" }: { className?: string }) => 
           ease: "easeInOut"
         }}
       />
-      
+
       <defs>
         <linearGradient id="triGradient">
           <stop offset="0%" stopColor="#7f5af0" />

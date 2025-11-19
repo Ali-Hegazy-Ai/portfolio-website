@@ -6,10 +6,10 @@ const Projects = () => {
   // Filter state
   const [activeFilter, setActiveFilter] = useState('All')
   const [expandedProject, setExpandedProject] = useState<number | null>(null)
-  
+
   // Filter options
   const filters = ['All', 'Web', 'Apps', 'Open Source']
-  
+
   // Featured project data
   const featuredProject = {
     title: "FocusFlow - Pomodoro Timer",
@@ -20,7 +20,7 @@ const Projects = () => {
     liveUrl: "https://egfocusflow.netlify.app/",
     category: 'Web'
   }
-  
+
   // Projects grid data
   const projects = [
     {
@@ -86,8 +86,8 @@ const Projects = () => {
   ]
 
   // Filter projects based on active filter
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
+  const filteredProjects = activeFilter === 'All'
+    ? projects
     : projects.filter(project => project.category === activeFilter)
 
   // Animation variants
@@ -119,17 +119,17 @@ const Projects = () => {
       <AnimatedGrid />
       <FloatingOrbs />
       <GeometricShape className="top-32 right-20 opacity-10" />
-      
+
       {/* Hero Section with Enhanced Design */}
       <section className="relative min-h-[25vh] flex items-center justify-center px-6 py-20 abstract-bg">
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90 pointer-events-none" />
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={containerVariants}
           className="relative z-10 max-w-[800px] mx-auto text-center"
         >
-          <motion.h1 
+          <motion.h1
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: { opacity: 1, y: 0 }
@@ -140,11 +140,11 @@ const Projects = () => {
               Selected Work
               <motion.div
                 className="absolute -inset-2 bg-gradient-to-r from-accent/10 to-green-400/10 rounded-3xl"
-                animate={{ 
+                animate={{
                   scale: [1, 1.02, 1],
                   opacity: [0.5, 0.2, 0.5]
                 }}
-                transition={{ 
+                transition={{
                   duration: 4,
                   repeat: Infinity,
                   ease: "easeInOut"
@@ -152,8 +152,8 @@ const Projects = () => {
               />
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             variants={itemVariants}
             transition={{ delay: 0.2 }}
             className="text-[18px] md:text-[20px] text-muted leading-relaxed"
@@ -166,14 +166,14 @@ const Projects = () => {
       {/* Featured Project Section */}
       <section ref={featuredRef} className="min-h-[50vh] py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={isFeaturedInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8 }}
             className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center"
           >
             {/* Project Image */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={isFeaturedInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -201,7 +201,7 @@ const Projects = () => {
             </motion.div>
 
             {/* Project Info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={isFeaturedInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -223,7 +223,7 @@ const Projects = () => {
                   {featuredProject.technologies.map((tech) => (
                     <motion.span
                       key={tech}
-                      whileHover={{ 
+                      whileHover={{
                         scale: 1.05,
                         boxShadow: "0 0 10px rgba(127, 90, 240, 0.3)"
                       }}
@@ -266,7 +266,7 @@ const Projects = () => {
       {/* Filter System */}
       <section className="py-12 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -279,11 +279,10 @@ const Projects = () => {
                 onClick={() => setActiveFilter(filter)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className={`px-6 py-3 text-sm font-medium transition-all duration-200 rounded-2xl ${
-                  activeFilter === filter
+                className={`px-6 py-3 text-sm font-medium transition-all duration-200 rounded-2xl ${activeFilter === filter
                     ? 'bg-accent text-black shadow-lg'
                     : 'text-muted border border-border hover:text-accent hover:border-accent/50 bg-background-secondary/30'
-                }`}
+                  }`}
               >
                 {filter}
               </motion.button>
@@ -295,7 +294,7 @@ const Projects = () => {
       {/* Project Grid */}
       <section ref={gridRef} className="py-12 px-6 pb-20">
         <div className="max-w-[1200px] mx-auto">
-          <motion.div 
+          <motion.div
             key={activeFilter} // Re-trigger animation on filter change
             initial="hidden"
             animate={isGridInView ? "visible" : "hidden"}
@@ -318,7 +317,7 @@ const Projects = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 }
                 }}
-                whileHover={{ 
+                whileHover={{
                   y: -8,
                   scale: expandedProject === project.id ? 1 : 1.02,
                   boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
@@ -330,8 +329,18 @@ const Projects = () => {
                   zIndex: expandedProject === project.id ? 50 : 1
                 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
+                role="button"
+                tabIndex={0}
                 onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
-                className="glass-card floating-element glow-on-hover overflow-hidden group rounded-3xl border border-border/30 bg-gradient-to-br from-background-secondary/80 to-background-secondary/40 backdrop-blur-sm hover:border-accent/50 transition-all duration-300 cursor-pointer"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setExpandedProject(expandedProject === project.id ? null : project.id)
+                  }
+                }}
+                aria-expanded={expandedProject === project.id}
+                aria-label={`View details for ${project.title} project`}
+                className="glass-card floating-element glow-on-hover overflow-hidden group rounded-3xl border border-border/30 bg-gradient-to-br from-background-secondary/80 to-background-secondary/40 backdrop-blur-sm hover:border-accent/50 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background"
               >
                 {/* Project Image */}
                 <div className="aspect-[4/3] bg-background-secondary relative overflow-hidden">
@@ -357,11 +366,11 @@ const Projects = () => {
                     <p className="text-[14px] text-muted leading-relaxed">
                       {project.description}
                     </p>
-                    
+
                     {/* Expanded content */}
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
-                      animate={{ 
+                      animate={{
                         height: expandedProject === project.id ? 'auto' : 0,
                         opacity: expandedProject === project.id ? 1 : 0
                       }}
