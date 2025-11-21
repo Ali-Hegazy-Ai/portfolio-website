@@ -1,10 +1,9 @@
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 const Hero = () => {
   const navigate = useNavigate()
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; duration: number }>>([])
 
   // Mouse tracking for 3D effects
@@ -37,7 +36,6 @@ const Hero = () => {
     const y = e.clientY - rect.top - rect.height / 2
     mouseX.set(x)
     mouseY.set(y)
-    setMousePosition({ x: e.clientX, y: e.clientY })
   }
 
   const scrollToProjects = () => navigate('/projects')

@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 import ServicesPreview from '../components/ServicesPreview'
-import {
-  AnimatedGrid,
-  FloatingOrbs,
-  StarField,
-  ConnectedNodes,
-  EnergyCurves,
-} from '../components/AbstractShapes'
+
 import { useOptimizedNavigation } from '../hooks/usePerformance'
 
 const HomePage = () => {
