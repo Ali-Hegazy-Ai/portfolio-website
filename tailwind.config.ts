@@ -18,9 +18,9 @@ const config: Config = {
           secondary: '#b3b3b3',
         },
         accent: {
-          DEFAULT: '#7f5af0',
-          hover: '#9370ff',
-          muted: 'rgba(127, 90, 240, 0.1)',
+          DEFAULT: '#ffffff',
+          hover: '#e5e5e5',
+          muted: 'rgba(255, 255, 255, 0.1)',
         },
         muted: {
           DEFAULT: '#a1a1a1',
@@ -53,14 +53,14 @@ const config: Config = {
         '128': '32rem',
       },
       boxShadow: {
-        glow: '0 0 20px rgba(127, 90, 240, 0.25)',
-        'glow-lg': '0 0 40px rgba(127, 90, 240, 0.15)',
-        'glow-green': '0 0 20px rgba(34, 197, 94, 0.25)',
-        brutal: '8px 8px 0px 0px rgba(127, 90, 240, 1)',
-        'brutal-sm': '4px 4px 0px 0px rgba(127, 90, 240, 1)',
+        glow: '0 0 20px rgba(255, 255, 255, 0.25)',
+        'glow-lg': '0 0 40px rgba(255, 255, 255, 0.15)',
+        'glow-green': '0 0 20px rgba(200, 200, 200, 0.25)',
+        brutal: '8px 8px 0px 0px rgba(255, 255, 255, 1)',
+        'brutal-sm': '4px 4px 0px 0px rgba(255, 255, 255, 1)',
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
         'float': '0 20px 60px rgba(0, 0, 0, 0.2)',
-        'abstract': '0 25px 50px -12px rgba(127, 90, 240, 0.25)',
+        'abstract': '0 25px 50px -12px rgba(255, 255, 255, 0.25)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -89,8 +89,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(127, 90, 240, 0.5)' },
-          '100%': { boxShadow: '0 0 30px rgba(127, 90, 240, 0.8)' },
+          '0%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(255, 255, 255, 0.8)' },
         },
         blob: {
           '0%': { transform: 'translate(0px, 0px) scale(1)' },
